@@ -9,7 +9,7 @@ public abstract class BaseId<T> {
         this.t = t;
     }
 
-    public T getT() {
+    public T getValue() {
         return t;
     }
 
