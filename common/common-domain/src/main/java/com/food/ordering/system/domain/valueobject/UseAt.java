@@ -2,28 +2,28 @@ package com.food.ordering.system.domain.valueobject;
 
 import java.util.Objects;
 
-public abstract class BaseId<T> {
-    private final T t;
+public class UseAt {
+    private boolean useAt;
 
-    protected BaseId(T t) {
-        this.t = t;
+    public UseAt(boolean useAt) {
+        this.useAt = useAt;
     }
 
-    public T getValue() {
-        return t;
+    public boolean isUseAt() {
+        return useAt;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        BaseId<?> baseId = (BaseId<?>) o;
-        return Objects.equals(t, baseId.t);
+        UseAt useAt1 = (UseAt) o;
+        return isUseAt() == useAt1.isUseAt();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(t);
+        return Objects.hash(isUseAt());
     }
 
 }
